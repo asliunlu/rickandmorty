@@ -4,10 +4,10 @@ import "../../App.scss";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light mb-4">
-      <div className="container">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light mb-4 collapse navbar-collapse justify-content-end">
+      <div className="container justify-content-center">
         <Link to="/" className="navbar-brand fs-3 ubuntu">
-          Rick & Morty <span className="text-primary">WiKi</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Rick_and_Morty.svg" />
         </Link>
         <style jsx>{`
           button[aria-expanded="false"] > .close {

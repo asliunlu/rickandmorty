@@ -4,10 +4,10 @@ import FilterBTN from "../FilterBTN";
 const Gender = ({ updateGender, updatePageNumber }) => {
   let genders = ["female", "male", "genderless", "unknown"];
   return (
-    <div className="accordion-item mb-3">
-      <h2 className="accordion-header" id="headingThree">
+    <div className="accordion-item mb-3 ">
+      <h2 className="accordion-header " id="headingThree">
         <button
-          className="accordion-button collapsed"
+          className="accordion-button collapsed text-success"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#collapseThree"

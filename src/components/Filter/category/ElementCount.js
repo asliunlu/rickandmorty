@@ -5,7 +5,7 @@ const ElementCount = ({ elementCount, sendDataToParent }) => {
   useEffect(() => {}, [selectedOption]);
   return (
     <>
-      <h5 className="font-italic">Display Options per Page</h5>
+      <h5 className="font-italic text-success">Display Options per Page</h5>
       <select
         class="form-control"
         name="state"

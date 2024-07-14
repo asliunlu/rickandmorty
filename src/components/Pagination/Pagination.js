@@ -7,6 +7,7 @@ const Pagination = ({ pageNumber, info, updatePageNumber }) => {
   };
 
   const [width, setWidth] = useState(window.innerWidth);
+
   const updateDimensions = () => {
     setWidth(window.innerWidth);
   };
@@ -40,14 +41,13 @@ const Pagination = ({ pageNumber, info, updatePageNumber }) => {
         nextLabel="Next"
         forcePage={pageNumber === 1 ? 0 : pageNumber - 1}
         previousLabel="Prev"
-        previousClassName="btn btn-primary fs-5 prev"
-        nextClassName="btn btn-primary fs-5 next"
+        previousClassName="btn btn-success fs-5 prev"
+        nextClassName="btn btn-success fs-5 next"
         activeClassName="active"
         marginPagesDisplayed={width < 576 ? 1 : 2}
         pageRangeDisplayed={width < 576 ? 1 : 2}
         pageCount={info?.pages}
         onPageChange={pageChange}
-        pageClassName="page-item"
         pageLinkClassName="page-link"
       />
     </>

@@ -42,6 +42,7 @@ const Home = () => {
   let [elementCount] = useState(9);
   let [search, setSearch] = useState("");
   let [dataFromFilter, setDataFromFilter] = useState(null);
+  let [dataFromSort, setDataFromSort] = useState("");
   let { info, results } = fetchedData;
 
   let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&gender=${gender}&species=${species}`;
@@ -50,6 +51,9 @@ const Home = () => {
     setDataFromFilter(data);
   };
 
+  const handlepropss = (data) => {
+    setDataFromSort(data);
+  };
   useEffect(() => {
     (async function () {
       let data = await fetch(api).then((res) => res.json());
@@ -58,8 +62,17 @@ const Home = () => {
   }, [api]);
   return (
     <div className="App">
-      <h1 className="text-center mb-3">Characters</h1>
-      <Search setSearch={setSearch} updatePageNumber={updatePageNumber} />
+      <div className="d-flex justify-content-center">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Rick_and_Morty.svg"
+          width={300}
+          height={150}
+        />
+      </div>
+
+      <div className="">
+        <Search setSearch={setSearch} updatePageNumber={updatePageNumber} />
+      </div>
       <div className="container">
         <div className="row">
           <Filter
@@ -71,6 +84,7 @@ const Home = () => {
             updateSpecies={updateSpecies}
             updatePageNumber={updatePageNumber}
             sendpropstoparent={handleprops}
+            sortpropssent={handlepropss}
           />
           <div className="col-lg-8 col-12">
             <div className="row">
@@ -78,6 +92,7 @@ const Home = () => {
                 page="/"
                 results={results}
                 dataFromFilter={dataFromFilter}
+                dataFromSort={dataFromSort}
               />
             </div>
           </div>

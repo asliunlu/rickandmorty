@@ -27,7 +27,7 @@ const FilterBTN = ({ input, task, updatePageNumber, index, name }) => {
             task(input);
             updatePageNumber(1);
           }}
-          className="btn btn-outline-primary"
+          className="btn btn-outline-success"
           for={`${name}-${index}`}
         >
           {input}
